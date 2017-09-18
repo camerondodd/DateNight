@@ -15,20 +15,30 @@
 		<header>
 			<h1>Date Night!</h1>
 		</header>
-		<section role="region" class="inOrOutPage">
+		<section role="region" class="outOrInPage">
 			<header role="banner">
-				<h2>Are you going out or staying in?</h2>
+				<h2>Are you Going Out or Staying In?</h2>
 			</header>
+			<div class="outOrInBox">
+				<button name="goOut" class="goOutButton">Go Out!</button>
+				<button name="stayIn" class="stayInButton">Stay In!</button>
+			</div>
 		</section>
-		<section role="region" class="inPage">
+		<section role="region" class="outPage" hidden>
 			<header role="banner">
-				<h2></h2>
+				<h2>Going Out Placeholder</h2>
 			</header>
+			<div class="returnHome">
+			  <button name="outToHome" class="homeButton">Second Thoughts?</button>
+			</div>
 		</section>
-		<section role="region" class="outPage">
+		<section role="region" class="inPage" hidden>
 			<header role="banner">
-				<h2></h2>
+				<h2>Staying In Placeholder</h2>
 			</header>
+			<div class="returnHome">
+			  <button name="inToHome" class="homeButton">Second Thoughts?</button>
+			</div>
 		</section>	
 	</main>
 </body>
