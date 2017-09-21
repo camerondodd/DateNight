@@ -28,6 +28,18 @@
 			<header role="banner">
 				<h2>Going Out</h2>
 			</header>
+			<form action="#" class="cityRequestContainer">
+            <label for="query">Where are you?</label>
+            <input type="text" class="cityInput" placeholder="EX: Dallas, Texas">
+            <button type="submit" class="citySubmit">Here!</button>
+      </form>
+      <form action="#" class="foodRequestContainer" hidden>
+            <label for="query">What do you want to eat?</label>
+            <input type="text" class="foodInput" placeholder="Chinese">
+            <button type="submit" class="foodSubmit">Search</button>
+            <a href="https://www.zomato.com/?utm_source=referral-widget&amp;utm_medium=restaurant_search_widget&amp;utm_campaign=widget-developers"><img src="https://www.zomato.com/images/logo/icon_32x32.png" alt="Zomato" width="16px" height="auto">Powered by Zomato</a>
+      </form>
+      <div class="foodResults" hidden></div>
 			<div class="returnHome">
 			  <button name="outToHome" class="homeButton">Second Thoughts?</button>
 			</div>
@@ -37,11 +49,13 @@
 				<h2>Staying In</h2>
 			</header>
 			<form action="#" class="recipeRequestContainer">
-            <label for="query"></label>
+            <label for="query">What do you want to make?</label>
             <input type="text" class="recipeInput">
             <button type="submit">Search</button>
+            <a href="http://developer.edamam.com"><img src="https://developer.edamam.com/images/light.png" alt="Edamam logo"></a>
       </form>
       <div class="recipeResults">
+        
       </div>
 			<div class="returnHome">
 			  <button name="inToHome" class="homeButton">Second Thoughts?</button>
