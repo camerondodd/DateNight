@@ -81,7 +81,7 @@ const cityURL="https://developers.zomato.com/api/v2.1/locations";
 
 const foodURL="https://developers.zomato.com/api/v2.1/search";
 
-const eventURL="http://api.eventful.com/jsonp/events/search";
+const eventURL="https://api.eventful.com/jsonp/events/search";
 
 function goOutButton(){
 	$('.outOrInBox').on('click','.goOutButton', function(){
