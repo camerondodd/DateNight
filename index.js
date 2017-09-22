@@ -220,7 +220,7 @@ function getEvent(searchTerm,callback){
 
 function displayEventResults(data){
   console.log('displayEventResults is running '+data);
-  const results=data.events.map((item)=> renderEvent(item));
+  const results=data.events.event.map((item)=> renderEvent(item));
   $('.eventResults').prop('hidden',false);
   $('.eventResults').html(results);
   console.log('displayFoodResults ran');
@@ -228,18 +228,16 @@ function displayEventResults(data){
 
 function renderEvent(item){
   console.log('renderEvent ran');
-  return`
-      <div class="resultHolder">
-        <a href="${item.event.url}">
-          <img src="${item.event.image.thumb.url}">
+  console.log(item);
+  return`<div class="resultHolder">
+        <a href="${item.url}">
+          ${item.title}
         </a>
         </br>
-        <p>Event: ${item.event.title}</p>
-        <p>Starts: ${item.event.start_time}</p>
-        <p>Venue: </p><a href="${item.event.venue_url}">${item.event.venue_name}</a>
-        </br>
-        <p>Address: ${item.event.venue_address}</p>
-        <p>${item.event.city_name}, ${item.event.region_abbr}  ${item.event.postal_code}</p>
+        <p>Starts: ${item.start_time}</p>
+        <p>Venue: <a href="${item.venue_url}">${item.venue_name}</a></p>
+        <p>Address: ${item.venue_address}</p>
+        <p>${item.city_name}, ${item.region_abbr}  ${item.postal_code}</p>
       </div>
     `;
 }
