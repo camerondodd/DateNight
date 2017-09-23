@@ -1,3 +1,74 @@
+html{
+	 background: url(https://images.unsplash.com/photo-1502477639450-ccb7a6e7c391?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+    padding:0;
+    margin:0;
+    font-family: 'Courgette', cursive;
+}
+h1{
+	color:#DC1E70;
+	font-family: 'Homemade Apple', cursive;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+h2{
+	color:#C5BEE9;
+	margin:10px;
+}
+
+.outOrIn{
+	background:#A30049;
+	color:#C5BEE9;
+	border:1px solid #8801B2;
+	width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:25%;
+}
+
+button{
+	background:#4F3E98;
+	color:#C5BEE9;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+}
+
+p{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+form{
+	background:#A30049;
+	color:#C5BEE9;
+	border:1px solid #8801B2;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:25%;
+	padding:10px;
+}
+
+.ideaContainer{
+	background:#A30049;
+	color:#C5BEE9;
+	border:1px solid #8801B2;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:25%;
+	padding:10px;
+}
+
+.cityRequestContainer{
+	width:400px;
+}
+
 header, .outOrInBox, nav, .city{
   text-align:center;
 }
@@ -8,7 +79,7 @@ header, .outOrInBox, nav, .city{
   margin:1%;
   padding:1%;
   height:500px;
-  overflow-x:auto;
+  overflow-x:hidden;
   overflow-y:auto;
 }
 .stop:after{
@@ -17,11 +88,15 @@ header, .outOrInBox, nav, .city{
   clear:both;
 }
 .foodPic{
-  width:100%;
+  width:66%;
   height:auto;
 }
 .resultHolder{
-  border-bottom:1px solid black;
+  background:#C5BEE9;
+  color:#4F3E98;
+  border:1px solid #8801B2;
   margin-bottom:10px;
   margin-top:10px;
+  border-radius:25%;
+  padding:10px;
 }

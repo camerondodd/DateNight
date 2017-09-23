@@ -132,6 +132,7 @@ function entityFind(data){
 function renderEntity(item){
   console.log('renderEntity ran');
   entity=`${item.entity_id}`;
+  console.log(entity);
 }
 
 function foodSubmit(){
@@ -174,7 +175,7 @@ function displayFoodResults(data){
 }
 
 function renderFood(item){
-  console.log('renderRecipes ran');
+  console.log('renderFood ran');
   return`
       <div class="resultHolder">
       <a href="${item.restaurant.url}">
