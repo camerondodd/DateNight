@@ -100,3 +100,10 @@ header, .outOrInBox, nav, .city{
   border-radius:25%;
   padding:10px;
 }
+@media only screen and (max-width:400px){
+	.outOrIn, .column{
+		width:98%;
+		margin:1%;
+		padding:1%;
+	}
+}
