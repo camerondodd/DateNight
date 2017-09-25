@@ -92,7 +92,7 @@ function goOutButton(){
 }
 
 function citySubmit(){
-  $('.cityRequestContainer').submit(event => {
+  $('.cityRequestContainer').unbind("submit").bind("submit",event => {
     event.preventDefault();
     const queryTarget=$(event.currentTarget).find('.cityInput');
     const cityInput=queryTarget.val();
@@ -224,7 +224,14 @@ function displayEventResults(data){
   const results=data.events.event.map((item)=> renderEvent(item));
   $('.eventResults').prop('hidden',false);
   $('.eventResults').html(results);
-  console.log('displayFoodResults ran');
+  // let eventList=[${data.events.event}];
+  //  if (eventList.length>1){
+  //  	$('.eventResults').html(results);
+  // 	 	console.log('displayEventResults ran');
+  //  }
+  //  else{
+  //  	$('.eventResults').html("<div class="resultHolder"><p>Sorry, No Results were Found</p></div>");
+  //  }
 }
 
 function renderEvent(item){
