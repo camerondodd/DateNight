@@ -198,6 +198,7 @@ function getFood(searchTerm,callback){
       data:{
         count:10,
         entity_id:entity,
+        entity_type:"city",
         q:searchTerm
       },
       success:callback
