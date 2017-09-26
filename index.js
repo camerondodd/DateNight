@@ -79,7 +79,7 @@ function getRecipes(searchTerm,callback){
       url:edamamSearchURL,
       data:{
         from:0,
-        to:10,
+        to:5,
         app_id:'0ddfcbda',
         app_key:'ff994fb730845d74622198d22cb55dfd',
         q:`${searchTerm}`
@@ -184,7 +184,7 @@ function getFood(searchTerm,callback){
         "user-key":"dfade01cfcbfa8fa156c5d8a39248d21"
       },
       data:{
-        count:10,
+        count:5,
         entity_id:entity,
         entity_type:"city",
         q:searchTerm
