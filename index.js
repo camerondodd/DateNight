@@ -269,7 +269,7 @@ function displayEventResults(data){
     $('.eventResults').html(results);
   } else {
     $('.eventResults').prop('hidden',false);
-    $('.eventResults').html("<p>No results found!</p>");
+    $('.eventResults').html("<p class='resultHolder'>No results found!</p>");
     $('.eventResults').css("color", "#fff");
   }
   
