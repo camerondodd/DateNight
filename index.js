@@ -262,9 +262,17 @@ function getEvent(searchTerm,callback){
 
 function displayEventResults(data){
   console.log('displayEventResults is running '+data);
-  const results=data.events.event.map((item)=> renderEvent(item));
-  $('.eventResults').prop('hidden',false);
-  $('.eventResults').html(results);
+  console.log(data);
+  if(data.total_items > 0){
+    const results=data.events.event.map((item)=> renderEvent(item));
+    $('.eventResults').prop('hidden',false);
+    $('.eventResults').html(results);
+  } else {
+    $('.eventResults').prop('hidden',false);
+    $('.eventResults').html("<p>No results found!</p>");
+    $('.eventResults').css("color", "#fff");
+  }
+  
   // let eventList=[${data.events.event}];
   //  if (eventList.length>1){
   //  	$('.eventResults').html(results);
