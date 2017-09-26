@@ -1,4 +1,6 @@
-//STAY IN
+//STAYING IN PAGE
+
+//CONST FOR STAYING IN PAGE
 
 const ideas=["<a href='https://www.youtube.com/watch?v=ZkW8gMkf1-k'><img src='https://i.ytimg.com/vi/ZkW8gMkf1-k/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCrT5IfRnYSs9Hw1SzVCU6hradcug' alt='Home picnic picture'></a></br>Have an indoor picnic",
 	"<a href='https://www.youtube.com/watch?v=yyhDigtkjVw'><img src='https://i.ytimg.com/vi/yyhDigtkjVw/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDyfktvnW-TiWLtvSO5kuwBQR0_dQ' alt='beer tasting'></a></br>Beer tasting",
@@ -44,23 +46,19 @@ const ideas=["<a href='https://www.youtube.com/watch?v=ZkW8gMkf1-k'><img src='ht
 
 const edamamSearchURL='https://api.edamam.com/search';
 
-function stayInButton(){
-	$('.outOrInBox').on('click','.stayInButton', function(){
-		console.log('stayInButton pressed');
-		$('.outOrInPage').prop('hidden',true);
-		$('.inPage').prop('hidden',false);
-	});
-}
+//IDEA FEATURE
 
 function ideaSubmit(){
    $('.ideaContainer').on('click','.ideaButton', function(){
     console.log("ideaButton pressed");
     $('.ideaResults').prop('hidden',false);
     $('.ideaResults').html("");
-		let randomIdea=ideas[Math.floor(Math.random()*ideas.length)];
-		$('.ideaResults').html(randomIdea);
+	let randomIdea=ideas[Math.floor(Math.random()*ideas.length)];
+	$('.ideaResults').html(randomIdea);
   });
 }
+
+//RECIPE FEATURE
 
 function recipeSubmit(){
   $('.recipeRequestContainer').submit(event => {
@@ -95,13 +93,7 @@ function getRecipes(searchTerm,callback){
 function displayRecipeResults(data){
   const results=data.hits.map((item)=> renderRecipes(item));
   $('.recipeResults').html(results);
-  console.log (results);
   console.log('displayRecipeResults ran');
-  // const ingredientString=`${item.recipe.ingredientLines}`;
-  // const ingredients=ingredientString.split(',');
-  // for (i=0; i<ingredients.length; i++){
-    // $('.resultHolder ul').append(`<li>${item.recipe.ingredientLines[i]}</li>`);
-  // }
 }
 
 function renderRecipes(item){
@@ -115,7 +107,9 @@ function renderRecipes(item){
     </div>`;
 }
 
-// GO OUT
+//GOING OUT PAGE
+
+//CONST FOR GOING OUT PAGE
 
 const cityURL="https://developers.zomato.com/api/v2.1/locations";
 
@@ -123,13 +117,7 @@ const foodURL="https://developers.zomato.com/api/v2.1/search";
 
 const eventURL="https://api.eventful.com/jsonp/events/search";
 
-function goOutButton(){
-	$('.outOrInBox').on('click','.goOutButton', function(){
-		console.log('goOutButton pressed');
-		$('.outOrInPage').prop('hidden',true);
-		$('.outPage').prop('hidden',false);
-	});
-}
+//CITY INFORMATION FOR EVENT AND RESTAURANT FEATURES
 
 function citySubmit(){
   $('.cityRequestContainer').unbind("submit").bind("submit",event => {
@@ -140,11 +128,11 @@ function citySubmit(){
     console.log('citySubmit ran with search term '+cityInput);
     getCity(cityInput,entityFind);
     eventCity=cityInput;
-   $('.foodRequestContainer').prop('hidden',false);
-   $('.eventRequestContainer').prop('hidden',false);
-   $('.cityResults').prop('hidden',false);
-   $('.cityResults').html('');
-   $('.cityResults').html(`I hear good things about ${cityInput}!`);
+    $('.foodRequestContainer').prop('hidden',false);
+    $('.eventRequestContainer').prop('hidden',false);
+    $('.cityResults').prop('hidden',false);
+    $('.cityResults').html('');
+    $('.cityResults').html(`I hear good things about ${cityInput}!`);
   });
 }
 
@@ -172,8 +160,9 @@ function entityFind(data){
 function renderEntity(item){
   console.log('renderEntity ran');
   entity=`${item.entity_id}`;
-  console.log(entity);
 }
+
+//RESTAURANT FEATURE
 
 function foodSubmit(){
   $('.foodRequestContainer').submit(event => {
@@ -187,7 +176,6 @@ function foodSubmit(){
 }
 
 function getFood(searchTerm,callback){
-    console.log(entity);
     settings={
       method:'GET',
       dataType: 'json',
@@ -208,7 +196,6 @@ function getFood(searchTerm,callback){
 }
 
 function displayFoodResults(data){
-  console.log('displayFoodResults is running '+data);
   const results=data.restaurants.map((item)=> renderFood(item));
   $('.foodResults').prop('hidden',false);
   $('.foodResults').html(results);
@@ -229,6 +216,8 @@ function renderFood(item){
       </div>
     `;
 }
+
+//EVENT FEATURE
 
 function eventSubmit(){
   $('.eventRequestContainer').submit(event => {
@@ -261,8 +250,7 @@ function getEvent(searchTerm,callback){
 }
 
 function displayEventResults(data){
-  console.log('displayEventResults is running '+data);
-  console.log(data);
+  console.log('displayEventResults is ran');
   if(data.total_items > 0){
     const results=data.events.event.map((item)=> renderEvent(item));
     $('.eventResults').prop('hidden',false);
@@ -272,20 +260,10 @@ function displayEventResults(data){
     $('.eventResults').html("<p class='resultHolder'>No results found!</p>");
     $('.eventResults').css("color", "#fff");
   }
-  
-  // let eventList=[${data.events.event}];
-  //  if (eventList.length>1){
-  //  	$('.eventResults').html(results);
-  // 	 	console.log('displayEventResults ran');
-  //  }
-  //  else{
-  //  	$('.eventResults').html("<div class="resultHolder"><p>Sorry, No Results were Found</p></div>");
-  //  }
 }
 
 function renderEvent(item){
   console.log('renderEvent ran');
-  console.log(item);
   return`<div class="resultHolder">
         <a href="${item.url}">
           ${item.title}
@@ -300,7 +278,23 @@ function renderEvent(item){
 }
 
 
-// OTHER
+// NAVIGATION
+
+function goOutButton(){
+	$('.outOrInBox').on('click','.goOutButton', function(){
+		console.log('goOutButton pressed');
+		$('.outOrInPage').prop('hidden',true);
+		$('.outPage').prop('hidden',false);
+	});
+}
+
+function stayInButton(){
+	$('.outOrInBox').on('click','.stayInButton', function(){
+		console.log('stayInButton pressed');
+		$('.outOrInPage').prop('hidden',true);
+		$('.inPage').prop('hidden',false);
+	});
+}
 
 function homeButton(){
   $('.returnHome').on('click','.homeButton', function(){
@@ -317,6 +311,8 @@ function homeButton(){
 		$('.eventRequestContainer').prop('hidden',true);
   });
 }
+
+//FUNCTION RUNNER
 
 function functionRunner(){
 	goOutButton();

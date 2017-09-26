@@ -1,5 +1,5 @@
 html{
-	 background: url(https://images.unsplash.com/photo-1502477639450-ccb7a6e7c391?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=) no-repeat center center fixed;
+	background: url(https://images.unsplash.com/photo-1502477639450-ccb7a6e7c391?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size:cover;
     -o-background-size:cover;
@@ -8,6 +8,7 @@ html{
     margin:0;
     font-family: 'Courgette', cursive;
 }
+
 h1{
 	color:#DC1E70;
 	font-family: 'Homemade Apple', cursive;
@@ -70,38 +71,43 @@ form{
 }
 
 header, .outOrInBox, nav, .city{
-  text-align:center;
+    text-align:center;
 }
+
 .column{
-  text-align:center;
-  float:left;
-  width:46%;
-  margin:1%;
-  padding:1%;
-  height:500px;
-  overflow-x:hidden;
-  overflow-y:auto;
+	text-align:center;
+	float:left;
+	width:46%;
+	margin:1%;
+	padding:1%;
+	height:500px;
+	overflow-x:hidden;
+	overflow-y:auto;
 }
+
 .stop:after{
-  display:block;
-  content:"";
-  clear:both;
+	display:block;
+	content:"";
+	clear:both;
 }
+
 .foodPic{
-  width:66%;
-  height:auto;
+	width:66%;
+	height:auto;
 }
+
 .resultHolder{
-  background:#C5BEE9;
-  color:#4F3E98;
-  border:1px solid #8801B2;
-  margin-bottom:10px;
-  margin-top:10px;
-  border-radius:25%;
-  padding:10px;
+	background:#C5BEE9;
+	color:#4F3E98;
+	border:1px solid #8801B2;
+	margin-bottom:10px;
+	margin-top:10px;
+	border-radius:25%;
+	padding:10px;
 }
+
 @media only screen and (max-width:400px){
-	.outOrIn, .column{
+	.outOrIn, .column, .cityRequestContainer{
 		width:98%;
 		margin:1%;
 		padding:1%;
