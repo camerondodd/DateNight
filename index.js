@@ -198,10 +198,6 @@ function getFood(searchTerm,callback){
 }
 
 function displayFoodResults(data){
-  // const results=data.restaurants.map((item)=> renderFood(item));
-  // $('.foodResults').prop('hidden',false);
-  // $('.foodResults').html(results);
-  // console.log('displayFoodResults ran');
   if(data.results_found > 0){
     const results=data.restaurants.map((item)=> renderFood(item));
     $('.foodResults').prop('hidden',false);
