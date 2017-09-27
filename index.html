@@ -19,15 +19,28 @@
 			<h1>DateNight!</h1>
 		</header>
 		<section role="region" class="outOrInPage">
+			<div class="intro">
+				<h2>Welcome to DateNight!</h2>
+				<p>The goal is simple. We want to help you plan a fun date with food an entertainment quickly and easily, so you have more time for romance.</p>
+				<p>Ready? Let's begin.</p>
+			</div>
 			<div class="outOrIn">
-				<header role="banner">
-					<h2>Are you Going Out or Staying In?</h2>
-				</header>
 				<div class="outOrInBox">
+					<h3>Are you Going Out or Staying In?</h3>
 					<button name="goOut" class="goOutButton">Go Out!</button>
 					<button name="stayIn" class="stayInButton">Stay In!</button>
 				</div>
 			</div>
+			<footer role="contentinfo" class="attFooter">
+				<span>Search Engines by: </span>
+				<a href="https://www.zomato.com/?utm_source=referral-widget&amp;utm_medium=restaurant_search_widget&amp;utm_campaign=widget-developers">
+		           	<img src="https://www.zomato.com/images/logo/icon_32x32.png" alt="Zomato" width="16px" height="auto" class="attFood">
+		        </a>
+		        <a href="https://eventful.com/"><img src="https://api.eventful.com/images/powered/eventful_58x20.gif" alt="Local Events, Concerts, Tickets" class="attEvent"></a>
+		        <a href="https://developer.edamam.com">
+		           	<img src="https://developer.edamam.com/images/light.png" alt="Edamam logo" class="attRecipe">
+		        </a>
+			</footer>
 		</section>
 		<section role="region" class="outPage" hidden>
 			<header role="banner">
@@ -37,6 +50,7 @@
 				<form action="#" class="cityRequestContainer" role="search">
 	            	<h3>Where are you?</h3>
 	            	<input type="text" class="cityInput" placeholder="Dallas, Texas">
+	            	</br>
 	            	<button type="submit" class="citySubmit">Here!</button>
 	            	<div class="cityResults" aria-live="assertive" hidden></div>
 	        	</form>
@@ -46,10 +60,7 @@
 		            <h3>What do you want to eat?</h3>
 		            <input type="text" class="foodInput" placeholder="Chinese">
 		            <button type="submit" class="foodSubmit">Search</button>
-		            </br>
-		            <a href="https://www.zomato.com/?utm_source=referral-widget&amp;utm_medium=restaurant_search_widget&amp;utm_campaign=widget-developers">
-		            	<img src="https://www.zomato.com/images/logo/icon_32x32.png" alt="Zomato" width="16px" height="auto" class="attFood"><span>  Powered by Zomato</span>
-		            </a>
+		            
 	       		</form>
         		<div class="foodResults" aria-live="assertive" hidden></div>
 			</section>
@@ -58,16 +69,15 @@
 		            <h3>What do you want to go see?</h3>
 		            <input type="text" class="eventInput" placeholder="Live Music">
 		            <button type="submit" class="eventSubmit">Search</button>
-		            </br>   
-		            <a href="https://eventful.com/"><img src="https://api.eventful.com/images/powered/eventful_58x20.gif" alt="Local Events, Concerts, Tickets" class="attEvent"><span>  Events by Eventful</span></a>
+		            
 		        </form>
 		        <div class="eventResults" aria-live="assertive" hidden></div>
 		    </section>
 		    <div class="stop"></div>
 		    <nav role="navigation">
-		        <div class="returnHome">
-					  <button name="outToHome" class="homeButton">Second Thoughts?</button>
-			    </div>
+		        <div class="returnHome">          
+					<button name="outToHome" class="homeButton">Second Thoughts?</button>
+			    </div>   
 		    </nav>
 		</section>
 		<section role="region" class="inPage" hidden>
@@ -79,10 +89,7 @@
 		            <h3>What do you want to make?</h3>
 		            <input type="text" class="recipeInput" placeholder="Chicken">
 		            <button type="submit">Search</button>
-		            </br>
-		            <a href="https://developer.edamam.com">
-		            	<img src="https://developer.edamam.com/images/light.png" alt="Edamam logo" class="attRecipe">
-		            </a>
+		            
         		</form>
         		<div class="recipeResults" aria-live="assertive" hidden></div>
 			</section>
@@ -90,14 +97,14 @@
 			    <div class="ideaContainer">
           			<h3>Don't know what to do?</h3>
          			<button class="ideaButton">Idea!</button>
-          	  		<div class="ideaResults" aria-live="assertive" hidden></div>
         	    </div>
+        	    <div class="ideaResults" aria-live="assertive" hidden></div>
 			</section>
 			<div class="stop"></div>
       		<nav role="navigation">
         		<div class="returnHome">
 			    	<button name="inToHome" class="homeButton">Second Thoughts?</button>
-			  	</div>
+			  	</div>     
       		</nav>
 		</section>	
 	</main>
