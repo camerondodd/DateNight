@@ -253,7 +253,7 @@ function citySubmit(){
 		$('.eventRequestContainer').prop('hidden',false);
 		$('.cityResults').prop('hidden',false);
 		$('.cityResults').html('');
-		$('.cityResults').html(`I hear good things about ${cityInput}!`);
+		$('.cityResults').html(`<p>I hear good things about ${cityInput}!</p><p>Tip: Try searching with no term!</p>`);
 	}
 
 	else if (state.length===2){
@@ -266,7 +266,7 @@ function citySubmit(){
 		$('.eventRequestContainer').prop('hidden',false);
 		$('.cityResults').prop('hidden',false);
 		$('.cityResults').html('');
-		$('.cityResults').html(`I hear good things about ${newCityInput}!`);
+		$('.cityResults').html(`<p>I hear good things about ${newCityInput}!</p><p>Tip: Try searching with no term!</p>`);
 	}
 
 	else {
