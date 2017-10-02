@@ -57,6 +57,7 @@ function ideaSubmit(){
 		$('.ideaResults').html(randomIdea);
 	});
 }
+// Generates ideas from ideas array
 
 //RECIPE FEATURE
 
@@ -71,6 +72,7 @@ function recipeSubmit(){
 		$('.recipeResults').prop('hidden',false);
 	});
 }
+// Handles submits from the recipe feature and feeds input to getRecipe
 
 function getRecipes(searchTerm,callback){
 	settings={
@@ -89,25 +91,29 @@ function getRecipes(searchTerm,callback){
 	$.ajax(settings);
 	console.log('getRecipes ran');
 }
+// Makes a GET request from Edamam API for recipes and gives results to displayRecipeResults
 
 function displayRecipeResults(data){
 	const results=data.hits.map((item)=> renderRecipes(item));
 	$('.recipeResults').html(results);
 	console.log('displayRecipeResults ran');
 }
+// Takes results and feeds them to renderRecipes, then adds them to the html
 
 function renderRecipes(item){
 	console.log('renderRecipes ran');
-	return`<div class="resultHolder">
-		<a href="${item.recipe.url}">
-			<img class="foodPic" src="${item.recipe.image}">
-		</a>
-		</br>
-		<a href="${item.recipe.url}">
-			<p>${item.recipe.label}</p>
-		</a>
-	</div>`;
+	return`
+		<div class="resultHolder">
+			<a href="${item.recipe.url}">
+				<img class="foodPic" src="${item.recipe.image}">
+			</a>
+			</br>
+			<a href="${item.recipe.url}">
+				<p>${item.recipe.label}</p>
+			</a>
+		</div>`;
 }
+// Generates html code for displayRecipeResults
 
 //GOING OUT PAGE
 
@@ -266,6 +272,7 @@ function citySubmit(){
 		}
 	});
 }
+// Takes city input, checks if the state is spelled out or abbreviated.  If abbreviated, feeds it to newStateFind, otherwise, feeds input to getCity and eventCity
 
 function newStateFind(state){
 	console.log('newStateFind ran');
@@ -277,6 +284,7 @@ function newStateFind(state){
 		}
 	}
 }
+// Loops through stateList and pulls out the full name of any abbreviated state
 
 function getCity(searchTerm,callback){
 	settings={
@@ -293,16 +301,19 @@ function getCity(searchTerm,callback){
 	$.ajax(settings);
 	console.log('getCity ran');
 }
+// Sends GET request to Zomato for entity_id
 
 function entityFind(data){
 	console.log("entityFind ran");
 	const results=data.location_suggestions.map((item)=> renderEntity(item));
 }
+// Maps results and feeds them to renderEntity
 
 function renderEntity(item){
 	console.log('renderEntity ran');
 	entity=`${item.entity_id}`;
 }
+// Creates global variable entity, required for getFood
 
 //RESTAURANT FEATURE
 
@@ -316,6 +327,7 @@ function foodSubmit(){
 		getFood(foodInput,displayFoodResults);
 	});
 }
+// Handles food search submits, feeding input to getFood
 
 function getFood(searchTerm,callback){
 	settings={
@@ -336,6 +348,7 @@ function getFood(searchTerm,callback){
 	$.ajax(settings);
 	console.log('getFood ran');
 }
+// Gives GET request to Zomato API using entity and feeds results to displayFoodResults
 
 function displayFoodResults(data){
 	if(data.results_found > 0){
@@ -349,6 +362,7 @@ function displayFoodResults(data){
 		$('.foodResults').css("color", "rgb(11,4,10)");
 	}
 }
+// If there are results, they are fed to renderFood then displayed in the html.  Else, a no results message is given
 
 function renderFood(item){
 	console.log('renderFood ran');
@@ -364,6 +378,7 @@ function renderFood(item){
 		</div>
 	`;
 }
+// Generates html for food results
 
 //EVENT FEATURE
 
@@ -377,6 +392,7 @@ function eventSubmit(){
 		getEvent(eventInput,displayEventResults);
 	});
 }
+// Handles event search submissions and feeds input to getEvent
 
 function getEvent(searchTerm,callback){
 	settings={
@@ -396,6 +412,7 @@ function getEvent(searchTerm,callback){
 	console.log(eventCity);
 	console.log('getEvent ran');
 }
+// Gives GET request to Eventful API using eventCity, feeds results to displayEventResults
 
 function displayEventResults(data){
 	console.log('displayEventResults is ran');
@@ -410,6 +427,7 @@ function displayEventResults(data){
 		$('.eventResults').css("color", "rgb(11,4,10)");
 	}
 }
+// If there are results, they are fed to renderEvent then displayed in html. Else, a no results message is displayed
 
 function renderEvent(item){
 	console.log('renderEvent ran');
@@ -426,7 +444,7 @@ function renderEvent(item){
 		</div>
 	`;
 }
-
+// Generates html for eventResults
 
 // NAVIGATION
 
@@ -437,6 +455,7 @@ function goOutButton(){
 		$('.outPage').prop('hidden',false);
 	});
 }
+// Navigates from landing page to Go Out page
 
 function stayInButton(){
 	$('.outOrInBox').on('click','.stayInButton', function(){
@@ -445,6 +464,7 @@ function stayInButton(){
 		$('.inPage').prop('hidden',false);
 	});
 }
+// Navigates from landing page to Stay In page
 
 function homeButton(){
 	$('.returnHome').on('click','.homeButton', function(){
@@ -461,6 +481,7 @@ function homeButton(){
 		$('.eventRequestContainer').prop('hidden',true);
 	});
 }
+// Navigates from any page to landing page
 
 //FUNCTION RUNNER
 
@@ -474,5 +495,6 @@ function functionRunner(){
 	eventSubmit();
 	ideaSubmit();
 }
+// Runs all event listeners
 
 $(functionRunner);
