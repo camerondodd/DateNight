@@ -88,6 +88,11 @@ button{
 	font-size:20px;
 }
 
+button:hover{
+	background:rgb(190,151,164);
+	color:rgb(28,42,88);
+}
+
 p{
 	margin-top:5px;
 	margin-bottom:5px;
@@ -180,6 +185,10 @@ img{
 	margin-top:8%
 }
 
+img:hover{
+	opacity:0.5;
+}
+
 img.attEvent{
 	width:58px;
 	margin-top:0;
@@ -241,6 +250,11 @@ nav button{
 	margin-top:10px;
 	margin-bottom:10px;
 	font-size:17px;
+}
+
+nav button:hover{
+	background:rgb(11,4,10);
+	color:rgb(190,151,164);
 }
 
 @media only screen and (max-width:640px){
