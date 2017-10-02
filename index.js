@@ -49,64 +49,64 @@ const edamamSearchURL='https://api.edamam.com/search';
 //IDEA FEATURE
 
 function ideaSubmit(){
-   $('.ideaContainer').on('click','.ideaButton', function(){
-    console.log("ideaButton pressed");
-    $('.ideaResults').prop('hidden',false);
-    $('.ideaResults').html("");
-	let randomIdea=ideas[Math.floor(Math.random()*ideas.length)];
-	$('.ideaResults').html(randomIdea);
-  });
+	$('.ideaContainer').on('click','.ideaButton', function(){
+		console.log("ideaButton pressed");
+		$('.ideaResults').prop('hidden',false);
+		$('.ideaResults').html("");
+		let randomIdea=ideas[Math.floor(Math.random()*ideas.length)];
+		$('.ideaResults').html(randomIdea);
+	});
 }
 
 //RECIPE FEATURE
 
 function recipeSubmit(){
-  $('.recipeRequestContainer').submit(event => {
-    event.preventDefault();
-    const queryTarget=$(event.currentTarget).find('.recipeInput');
-    const recipeInput=queryTarget.val();
-    queryTarget.val('');
-    console.log('recipeSubmit ran with search term '+recipeInput);
-    getRecipes(recipeInput,displayRecipeResults);
-    $('.recipeResults').prop('hidden',false);
-  });
+	$('.recipeRequestContainer').submit(event => {
+		event.preventDefault();
+		const queryTarget=$(event.currentTarget).find('.recipeInput');
+		const recipeInput=queryTarget.val();
+		queryTarget.val('');
+		console.log('recipeSubmit ran with search term '+recipeInput);
+		getRecipes(recipeInput,displayRecipeResults);
+		$('.recipeResults').prop('hidden',false);
+	});
 }
 
 function getRecipes(searchTerm,callback){
-    settings={
-      method:'GET',
-      dataType: 'json',
-      url:edamamSearchURL,
-      data:{
-        from:0,
-        to:5,
-        app_id:'0ddfcbda',
-        app_key:'ff994fb730845d74622198d22cb55dfd',
-        q:`${searchTerm}`
-      },
-      success:callback
-    };
-  $.ajax(settings);
-  console.log('getRecipes ran');
-} 
+	settings={
+		method:'GET',
+		dataType: 'json',
+		url:edamamSearchURL,
+		data:{
+			from:0,
+			to:5,
+			app_id:'0ddfcbda',
+			app_key:'ff994fb730845d74622198d22cb55dfd',
+			q:`${searchTerm}`
+		},
+		success:callback
+	};
+	$.ajax(settings);
+	console.log('getRecipes ran');
+}
 
 function displayRecipeResults(data){
-  const results=data.hits.map((item)=> renderRecipes(item));
-  $('.recipeResults').html(results);
-  console.log('displayRecipeResults ran');
+	const results=data.hits.map((item)=> renderRecipes(item));
+	$('.recipeResults').html(results);
+	console.log('displayRecipeResults ran');
 }
 
 function renderRecipes(item){
-  console.log('renderRecipes ran');
-  return`<div class="resultHolder">
-      <a href="${item.recipe.url}">
-        <img class="foodPic" src="${item.recipe.image}">
-      </a>
-      </br>
-      <a href="${item.recipe.url}">
-      	<p>${item.recipe.label}</p>
-      </a>
-    </div>`;
+	console.log('renderRecipes ran');
+	return`<div class="resultHolder">
+		<a href="${item.recipe.url}">
+			<img class="foodPic" src="${item.recipe.image}">
+		</a>
+		</br>
+		<a href="${item.recipe.url}">
+			<p>${item.recipe.label}</p>
+		</a>
+	</div>`;
 }
 
 //GOING OUT PAGE
@@ -120,145 +120,145 @@ const foodURL="https://developers.zomato.com/api/v2.1/search";
 const eventURL="https://api.eventful.com/jsonp/events/search";
 
 const stateList=[
-    	{abr:'AL',
-    	full:'Alabama'},
-    	{abr:'AK',
-    	full:'Alaska'},
-    	{abr:'AZ',
-    	full:'Arizona'},
-    	{abr:'AR',
-    	full:'Arkansas'},
-    	{abr:'CA',
-    	full:'California'},
-    	{abr:'CO',
-    	full:'Colorado'},
-    	{abr:'CT',
-    	full:'Connecticut'},
-    	{abr:'DE',
-    	full:'Delaware'},
-    	{abr:'FL',
-    	full:'Florida'},
-    	{abr:'GA',
-    	full:'Georgia'},
-    	{abr:'HI',
-    	full:'Hawaii'},
-    	{abr:'ID',
-    	full:'Idaho'},
-    	{abr:'IL',
-    	full:'Illinois'},
-    	{abr:'IN',
-    	full:'Indiana'},
-    	{abr:'IA',
-    	full:'Iowa'},
-    	{abr:'KS',
-    	full:'Kansas'},
-    	{abr:'KY',
-    	full:'Kentucky'},
-    	{abr:'LA',
-    	full:'Louisiana'},
-    	{abr:'ME',
-    	full:'Maine'},
-    	{abr:'MD',
-    	full:'Maryland'},
-    	{abr:'MA',
-    	full:'Massachusetts'},
-    	{abr:'MI',
-    	full:'Michigan'},
-    	{abr:'MN',
-    	full:'Minnesota'},
-    	{abr:'MS',
-    	full:'Mississippi'},
-    	{abr:'MO',
-    	full:'Missouri'},
-    	{abr:'MT',
-    	full:'Montana'},
-    	{abr:'NE',
-    	full:'Nebraska'},
-    	{abr:'NV',
-    	full:'Nevada'},
-    	{abr:'NH',
-    	full:'New Hampshire'},
-    	{abr:'NJ',
-    	full:'New Jersey'},
-    	{abr:'NM',
-    	full:'New Mexico'},
-    	{abr:'NY',
-    	full:'New York'},
-    	{abr:'NC',
-    	full:'North Carolina'},
-    	{abr:'ND',
-    	full:'North Dakota'},
-    	{abr:'OH',
-    	full:'Ohio'},
-    	{abr:'OK',
-    	full:'Oklahoma'},
-    	{abr:'OR',
-    	full:'Oregon'},
-    	{abr:'PA',
-    	full:'Pennsylvania'},
-    	{abr:'RI',
-    	full:'Rhode Island'},
-    	{abr:'SC',
-    	full:'South Carolina'},
-    	{abr:'SD',
-    	full:'South Dakota'},
-    	{abr:'TN',
-    	full:'Tennessee'},
-    	{abr:'TX',
-    	full:'Texas'},
-    	{abr:'UT',
-    	full:'Utah'},
-    	{abr:'VT',
-    	full:'Vermont'},
-    	{abr:'VA',
-    	full:'Virginia'},
-    	{abr:'WA',
-    	full:'Washington'},
-    	{abr:'WV',
-    	full:'West Virginia'},
-    	{abr:'WI',
-    	full:'Wisconsin'},
-    	{abr:'WY',
-    	full:'Wyoming'}
-    ];
+	{abr:'AL',
+	full:'Alabama'},
+	{abr:'AK',
+	full:'Alaska'},
+	{abr:'AZ',
+	full:'Arizona'},
+	{abr:'AR',
+	full:'Arkansas'},
+	{abr:'CA',
+	full:'California'},
+	{abr:'CO',
+	full:'Colorado'},
+	{abr:'CT',
+	full:'Connecticut'},
+	{abr:'DE',
+	full:'Delaware'},
+	{abr:'FL',
+	full:'Florida'},
+	{abr:'GA',
+	full:'Georgia'},
+	{abr:'HI',
+	full:'Hawaii'},
+	{abr:'ID',
+	full:'Idaho'},
+	{abr:'IL',
+	full:'Illinois'},
+	{abr:'IN',
+	full:'Indiana'},
+	{abr:'IA',
+	full:'Iowa'},
+	{abr:'KS',
+	full:'Kansas'},
+	{abr:'KY',
+	full:'Kentucky'},
+	{abr:'LA',
+	full:'Louisiana'},
+	{abr:'ME',
+	full:'Maine'},
+	{abr:'MD',
+	full:'Maryland'},
+	{abr:'MA',
+	full:'Massachusetts'},
+	{abr:'MI',
+	full:'Michigan'},
+	{abr:'MN',
+	full:'Minnesota'},
+	{abr:'MS',
+	full:'Mississippi'},
+	{abr:'MO',
+	full:'Missouri'},
+	{abr:'MT',
+	full:'Montana'},
+	{abr:'NE',
+	full:'Nebraska'},
+	{abr:'NV',
+	full:'Nevada'},
+	{abr:'NH',
+	full:'New Hampshire'},
+	{abr:'NJ',
+	full:'New Jersey'},
+	{abr:'NM',
+	full:'New Mexico'},
+	{abr:'NY',
+	full:'New York'},
+	{abr:'NC',
+	full:'North Carolina'},
+	{abr:'ND',
+	full:'North Dakota'},
+	{abr:'OH',
+	full:'Ohio'},
+	{abr:'OK',
+	full:'Oklahoma'},
+	{abr:'OR',
+	full:'Oregon'},
+	{abr:'PA',
+	full:'Pennsylvania'},
+	{abr:'RI',
+	full:'Rhode Island'},
+	{abr:'SC',
+	full:'South Carolina'},
+	{abr:'SD',
+	full:'South Dakota'},
+	{abr:'TN',
+	full:'Tennessee'},
+	{abr:'TX',
+	full:'Texas'},
+	{abr:'UT',
+	full:'Utah'},
+	{abr:'VT',
+	full:'Vermont'},
+	{abr:'VA',
+	full:'Virginia'},
+	{abr:'WA',
+	full:'Washington'},
+	{abr:'WV',
+	full:'West Virginia'},
+	{abr:'WI',
+	full:'Wisconsin'},
+	{abr:'WY',
+	full:'Wyoming'}
+];
 
 //CITY INFORMATION FOR EVENT AND RESTAURANT FEATURES
 
 function citySubmit(){
-  $('.cityRequestContainer').unbind("submit").bind("submit",event => {
-    event.preventDefault();
-    const queryTarget=$(event.currentTarget).find('.cityInput');
-    const cityInput=queryTarget.val();
-    queryTarget.val('');
-    const splitCityInput=cityInput.split(',');
-    const city=splitCityInput[0];
-    const stateFat=splitCityInput[1];
-    const state=stateFat.trim();
-    
-    if (state.length>2){
-	    console.log('citySubmit ran with search term '+cityInput);
-	    getCity(cityInput,entityFind);
-	    eventCity=cityInput;
-	    $('.foodRequestContainer').prop('hidden',false);
-	    $('.eventRequestContainer').prop('hidden',false);
-	    $('.cityResults').prop('hidden',false);
-	    $('.cityResults').html('');
-	    $('.cityResults').html(`I hear good things about ${cityInput}!`);
-		}
-	  
+	$('.cityRequestContainer').unbind("submit").bind("submit",event => {
+		event.preventDefault();
+		const queryTarget=$(event.currentTarget).find('.cityInput');
+		const cityInput=queryTarget.val();
+		queryTarget.val('');
+		const splitCityInput=cityInput.split(',');
+		const city=splitCityInput[0];
+		const stateFat=splitCityInput[1];
+		const state=stateFat.trim();
+
+	if (state.length>2){
+		console.log('citySubmit ran with search term '+cityInput);
+		getCity(cityInput,entityFind);
+		eventCity=cityInput;
+		$('.foodRequestContainer').prop('hidden',false);
+		$('.eventRequestContainer').prop('hidden',false);
+		$('.cityResults').prop('hidden',false);
+		$('.cityResults').html('');
+		$('.cityResults').html(`I hear good things about ${cityInput}!`);
+	}
+
 	else if (state.length===2){
-	  	newStateFind(state);
+		newStateFind(state);
 		let newCityInput=`${city}, ${newState}`;
 		console.log('citySubmit ran with search term '+newCityInput);
-	    getCity(newCityInput,entityFind);
-	    eventCity=cityInput;
-	    $('.foodRequestContainer').prop('hidden',false);
-	    $('.eventRequestContainer').prop('hidden',false);
-	    $('.cityResults').prop('hidden',false);
-	    $('.cityResults').html('');
-	    $('.cityResults').html(`I hear good things about ${newCityInput}!`);
+		getCity(newCityInput,entityFind);
+		eventCity=cityInput;
+		$('.foodRequestContainer').prop('hidden',false);
+		$('.eventRequestContainer').prop('hidden',false);
+		$('.cityResults').prop('hidden',false);
+		$('.cityResults').html('');
+		$('.cityResults').html(`I hear good things about ${newCityInput}!`);
 	}
-	
+
 	else {
 		$('.cityResults').prop('hidden',false);
 		$('.cityResults').html('');
@@ -268,161 +268,163 @@ function citySubmit(){
 }
 
 function newStateFind(state){
-  	console.log('newStateFind ran');
+	console.log('newStateFind ran');
 	for (let i=0;i<stateList.length;i++){
-	    if (stateList[i].abr===state){
-	        newState=stateList[i].full;
-	        console.log(newState);
-	    	return newState;
-	  	}
+		if (stateList[i].abr===state){
+			newState=stateList[i].full;
+			console.log(newState);
+			return newState;
+		}
 	}
 }
 
 function getCity(searchTerm,callback){
-    settings={
-      method:'GET',
-      url:cityURL,
-      headers:{
-        "user-key":"dfade01cfcbfa8fa156c5d8a39248d21"
-      },
-      data:{
-        query:searchTerm
-      },
-      success:callback
-    };
-  $.ajax(settings);
-  console.log('getCity ran');
-} 
+	settings={
+		method:'GET',
+		url:cityURL,
+		headers:{
+			"user-key":"dfade01cfcbfa8fa156c5d8a39248d21"
+		},
+		data:{
+			query:searchTerm
+		},
+		success:callback
+	};
+	$.ajax(settings);
+	console.log('getCity ran');
+}
 
 function entityFind(data){
-  console.log("entityFind ran");
-  const results=data.location_suggestions.map((item)=> renderEntity(item));
+	console.log("entityFind ran");
+	const results=data.location_suggestions.map((item)=> renderEntity(item));
 }
 
 function renderEntity(item){
-  console.log('renderEntity ran');
-  entity=`${item.entity_id}`;
+	console.log('renderEntity ran');
+	entity=`${item.entity_id}`;
 }
 
 //RESTAURANT FEATURE
 
 function foodSubmit(){
-  $('.foodRequestContainer').submit(event => {
-    event.preventDefault();
-    const queryTarget=$(event.currentTarget).find('.foodInput');
-    const foodInput=queryTarget.val();
-    queryTarget.val('');
-    console.log('foodSubmit ran with search term '+foodInput);
-    getFood(foodInput,displayFoodResults);
-  });
+	$('.foodRequestContainer').submit(event => {
+		event.preventDefault();
+		const queryTarget=$(event.currentTarget).find('.foodInput');
+		const foodInput=queryTarget.val();
+		queryTarget.val('');
+		console.log('foodSubmit ran with search term '+foodInput);
+		getFood(foodInput,displayFoodResults);
+	});
 }
 
 function getFood(searchTerm,callback){
-    settings={
-      method:'GET',
-      dataType: 'json',
-      url:foodURL,
-      headers:{
-        "user-key":"dfade01cfcbfa8fa156c5d8a39248d21"
-      },
-      data:{
-        count:5,
-        entity_id:entity,
-        entity_type:"city",
-        q:searchTerm
-      },
-      success:callback
-    };
-  $.ajax(settings);
-  console.log('getFood ran');
+	settings={
+		method:'GET',
+		dataType: 'json',
+		url:foodURL,
+		headers:{
+			"user-key":"dfade01cfcbfa8fa156c5d8a39248d21"
+		},
+		data:{
+			count:5,
+			entity_id:entity,
+			entity_type:"city",
+			q:searchTerm
+		},
+		success:callback
+	};
+	$.ajax(settings);
+	console.log('getFood ran');
 }
 
 function displayFoodResults(data){
-  if(data.results_found > 0){
-    const results=data.restaurants.map((item)=> renderFood(item));
-    $('.foodResults').prop('hidden',false);
-    $('.foodResults').html(results);
-  } 
-  else {
-    $('.foodResults').prop('hidden',false);
-    $('.foodResults').html("<p class='resultHolder'>No results found!</p>");
-    $('.foodResults').css("color", "rgb(11,4,10)");
-  }
+	if(data.results_found > 0){
+		const results=data.restaurants.map((item)=> renderFood(item));
+		$('.foodResults').prop('hidden',false);
+		$('.foodResults').html(results);
+	} 
+	else {
+		$('.foodResults').prop('hidden',false);
+		$('.foodResults').html("<p class='resultHolder'>No results found!</p>");
+		$('.foodResults').css("color", "rgb(11,4,10)");
+	}
 }
 
 function renderFood(item){
-  console.log('renderFood ran');
-  return`
-      <div class="resultHolder">
-      <a href="${item.restaurant.url}">
-       ${item.restaurant.name}
-      </a>
-      </br>
-      <p>User Rating: ${item.restaurant.user_rating.rating_text}</p>
-      <p>Price Range: ${item.restaurant.price_range}/5</p>
-      <p>${item.restaurant.location.address}</p>
-      </div>
-    `;
+	console.log('renderFood ran');
+	return`
+		<div class="resultHolder">
+			<a href="${item.restaurant.url}">
+				${item.restaurant.name}
+			</a>
+			</br>
+			<p>User Rating: ${item.restaurant.user_rating.rating_text}</p>
+			<p>Price Range: ${item.restaurant.price_range}/5</p>
+			<p>${item.restaurant.location.address}</p>
+		</div>
+	`;
 }
 
 //EVENT FEATURE
 
 function eventSubmit(){
-  $('.eventRequestContainer').submit(event => {
-    event.preventDefault();
-    const queryTarget=$(event.currentTarget).find('.eventInput');
-    const eventInput=queryTarget.val();
-    queryTarget.val('');
-    console.log('eventSubmit ran with search term '+eventInput);
-    getEvent(eventInput,displayEventResults);
-  });
+	$('.eventRequestContainer').submit(event => {
+		event.preventDefault();
+		const queryTarget=$(event.currentTarget).find('.eventInput');
+		const eventInput=queryTarget.val();
+		queryTarget.val('');
+		console.log('eventSubmit ran with search term '+eventInput);
+		getEvent(eventInput,displayEventResults);
+	});
 }
 
 function getEvent(searchTerm,callback){
-    settings={
-      method:'GET',
-      dataType:'jsonp',
-      url:eventURL,
-      data:{
-        app_key:"tsTVsnpR6pkcLkn6",
-        location:eventCity,
-        date:"Today",
-        keywords:searchTerm
-      },
-      success:callback
-    };
-  $.ajax(settings);
-  console.log(eventURL);
-  console.log(eventCity);
-  console.log('getEvent ran');
+	settings={
+		method:'GET',
+		dataType:'jsonp',
+		url:eventURL,
+		data:{
+			app_key:"tsTVsnpR6pkcLkn6",
+			location:eventCity,
+			date:"Today",
+			keywords:searchTerm
+		},
+		success:callback
+	};
+	$.ajax(settings);
+	console.log(eventURL);
+	console.log(eventCity);
+	console.log('getEvent ran');
 }
 
 function displayEventResults(data){
-  console.log('displayEventResults is ran');
-  if(data.total_items > 0){
-    const results=data.events.event.map((item)=> renderEvent(item));
-    $('.eventResults').prop('hidden',false);
-    $('.eventResults').html(results);
-  } else {
-    $('.eventResults').prop('hidden',false);
-    $('.eventResults').html("<p class='resultHolder'>No results found!</p>");
-    $('.eventResults').css("color", "rgb(11,4,10)");
-  }
+	console.log('displayEventResults is ran');
+	if(data.total_items > 0){
+		const results=data.events.event.map((item)=> renderEvent(item));
+		$('.eventResults').prop('hidden',false);
+		$('.eventResults').html(results);
+	}
+	else {
+		$('.eventResults').prop('hidden',false);
+		$('.eventResults').html("<p class='resultHolder'>No results found!</p>");
+		$('.eventResults').css("color", "rgb(11,4,10)");
+	}
 }
 
 function renderEvent(item){
-  console.log('renderEvent ran');
-  return`<div class="resultHolder">
-        <a href="${item.url}">
-          ${item.title}
-        </a>
-        </br>
-        <p>Starts: ${item.start_time}</p>
-        <p>Venue: <a href="${item.venue_url}">${item.venue_name}</a></p>
-        <p>Address: ${item.venue_address}</p>
-        <p>${item.city_name}, ${item.region_abbr}  ${item.postal_code}</p>
-      </div>
-    `;
+	console.log('renderEvent ran');
+	return`
+		<div class="resultHolder">
+			<a href="${item.url}">
+				${item.title}
+			</a>
+			</br>
+			<p>Starts: ${item.start_time}</p>
+			<p>Venue: <a href="${item.venue_url}">${item.venue_name}</a></p>
+			<p>Address: ${item.venue_address}</p>
+			<p>${item.city_name}, ${item.region_abbr}  ${item.postal_code}</p>
+		</div>
+	`;
 }
 
 
@@ -445,9 +447,9 @@ function stayInButton(){
 }
 
 function homeButton(){
-  $('.returnHome').on('click','.homeButton', function(){
-    console.log("homeButton pressed");
-    $('.outOrInPage').prop('hidden',false);
+	$('.returnHome').on('click','.homeButton', function(){
+		console.log("homeButton pressed");
+		$('.outOrInPage').prop('hidden',false);
 		$('.outPage').prop('hidden',true);
 		$('.inPage').prop('hidden',true);
 		$('.recipeResults').prop('hidden',true);
@@ -457,7 +459,7 @@ function homeButton(){
 		$('.cityResults').prop('hidden',true);
 		$('.foodRequestContainer').prop('hidden',true);
 		$('.eventRequestContainer').prop('hidden',true);
-  });
+	});
 }
 
 //FUNCTION RUNNER

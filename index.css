@@ -2,13 +2,15 @@
 	margin:0;
 	padding:0;
 }
+
 html{
 	background: url(https://images.unsplash.com/photo-1502477639450-ccb7a6e7c391?dpr=1&auto=compress,format&fit=crop&w=767&h=511&q=80&cs=tinysrgb&crop=) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
 }
+
 main{
 	font-size:17px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -155,7 +157,7 @@ input{
 }
 
 header, .outOrInBox, nav, .city{
-    text-align:center;
+	text-align:center;
 }
 
 .column{
@@ -165,7 +167,6 @@ header, .outOrInBox, nav, .city{
 	margin:1%;
 	padding:1%;
 }
-
 
 .stop:after{
 	display:block;
@@ -323,7 +324,7 @@ nav button{
 	img.attRecipe{
 		width:80px;
 		margin-top:0;
-}
+	}
 
 	.cityRequestContainer{
 	width:60%;
@@ -331,7 +332,8 @@ nav button{
 	margin-right:auto;
 	margin-top:0;
 	margin-bottom:15px;
-}
+	}
+
 	nav{
 		height:40px;
 	}
