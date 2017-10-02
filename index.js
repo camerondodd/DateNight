@@ -140,6 +140,8 @@ const stateList=[
 	full:'Colorado'},
 	{abr:'CT',
 	full:'Connecticut'},
+	{abr:'DC',
+	full:'DC'},
 	{abr:'DE',
 	full:'Delaware'},
 	{abr:'FL',
