@@ -235,13 +235,15 @@ const stateList=[
 function citySubmit(){
 	$('.cityRequestContainer').unbind("submit").bind("submit",event => {
 		event.preventDefault();
-		const queryTarget=$(event.currentTarget).find('.cityInput');
-		const cityInput=queryTarget.val();
+		let queryTarget=$(event.currentTarget).find('.cityInput');
+		let cityInput=queryTarget.val();
 		queryTarget.val('');
-		const splitCityInput=cityInput.split(',');
-		const city=splitCityInput[0];
-		const stateFat=splitCityInput[1];
-		const state=stateFat.trim();
+		let splitCityInput=cityInput.split(',');
+		let city=splitCityInput[0];
+		let stateFat=splitCityInput[1];
+		let state=stateFat.trim();
+		$('.foodResults').prop('hidden',true);
+		$('.eventResults').prop('hidden',true);
 
 	if (state.length>2){
 		console.log('citySubmit ran with search term '+cityInput);

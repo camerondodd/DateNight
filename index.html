@@ -51,7 +51,7 @@
 			<section class="city" role="region">
 				<form action="#" class="cityRequestContainer" role="search">
 					<h3>Where are you?</h3>
-					<input type="text" class="cityInput" placeholder="Dallas, Texas">
+					<input type="text" class="cityInput" placeholder="Dallas, Texas" pattern="^.+? ?, ?.+?$" title="Please make sure there is a comma between the city and the state">
 					</br>
 					<button type="submit" class="citySubmit">Submit</button>
 					<div class="cityResults" aria-live="assertive" hidden></div>
