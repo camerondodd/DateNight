@@ -259,16 +259,22 @@ function citySubmit(){
 	else if (state.length===2){
 		let stateCap=state.toUpperCase();
 		newStateFind(stateCap);
-		let newCityInput=`${city}, ${newState}`;
-		let newCityInputCap=newCityInput.toUpperCase();
-		console.log('citySubmit ran with search term '+newCityInput);
-		getCity(newCityInput,entityFind);
-		eventCity=cityInput;
-		$('.foodRequestContainer').prop('hidden',false);
-		$('.eventRequestContainer').prop('hidden',false);
-		$('.cityResults').prop('hidden',false);
-		$('.cityResults').html('');
-		$('.cityResults').html(`<p>I hear good things about ${newCityInputCap}!</p>`);
+		if (newState==="Narnia"){
+			$('.cityResults').html(`I'm not sure ${state} is a state.`);
+		}
+
+		else{
+			let newCityInput=`${city}, ${newState}`;
+			let newCityInputCap=newCityInput.toUpperCase();
+			console.log('citySubmit ran with search term '+newCityInput);
+			getCity(newCityInput,entityFind);
+			eventCity=cityInput;
+			$('.foodRequestContainer').prop('hidden',false);
+			$('.eventRequestContainer').prop('hidden',false);
+			$('.cityResults').prop('hidden',false);
+			$('.cityResults').html('');
+			$('.cityResults').html(`<p>I hear good things about ${newCityInputCap}!</p>`);
+		}
 	}
 
 	else {
@@ -289,6 +295,8 @@ function newStateFind(state){
 			return newState;
 		}
 	}
+	newState="Narnia";
+	return newState;
 }
 // Loops through stateList and pulls out the full name of any abbreviated state
 
