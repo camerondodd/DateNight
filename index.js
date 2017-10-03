@@ -257,7 +257,8 @@ function citySubmit(){
 	}
 
 	else if (state.length===2){
-		newStateFind(state);
+		let stateCap=state.toUpperCase();
+		newStateFind(stateCap);
 		let newCityInput=`${city}, ${newState}`;
 		console.log('citySubmit ran with search term '+newCityInput);
 		getCity(newCityInput,entityFind);
