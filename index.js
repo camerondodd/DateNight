@@ -316,7 +316,7 @@ function entityFind(data){
 
 function renderEntity(item){
 	console.log('renderEntity ran');
-	entity=`${item.entity_id}`;
+	entity=`${item.city_id}`;
 }
 // Creates global variable entity, required for getFood
 
