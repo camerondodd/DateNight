@@ -236,7 +236,7 @@ function citySubmit(){
 	$('.cityRequestContainer').unbind("submit").bind("submit",event => {
 		event.preventDefault();
 		let queryTarget=$(event.currentTarget).find('.cityInput');
-		let cityInput=queryTarget.val();
+		let cityInput=queryTarget.val().toUpperCase();
 		queryTarget.val('');
 		let splitCityInput=cityInput.split(',');
 		let city=splitCityInput[0];
@@ -260,6 +260,7 @@ function citySubmit(){
 		let stateCap=state.toUpperCase();
 		newStateFind(stateCap);
 		let newCityInput=`${city}, ${newState}`;
+		let newCityInputCap=newCityInput.toUpperCase();
 		console.log('citySubmit ran with search term '+newCityInput);
 		getCity(newCityInput,entityFind);
 		eventCity=cityInput;
@@ -267,7 +268,7 @@ function citySubmit(){
 		$('.eventRequestContainer').prop('hidden',false);
 		$('.cityResults').prop('hidden',false);
 		$('.cityResults').html('');
-		$('.cityResults').html(`<p>I hear good things about ${newCityInput}!</p>`);
+		$('.cityResults').html(`<p>I hear good things about ${newCityInputCap}!</p>`);
 	}
 
 	else {
