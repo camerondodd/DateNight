@@ -437,7 +437,7 @@ function displayEventResults(data){
 	}
 	else {
 		$('.eventResults').prop('hidden',false);
-		$('.eventResults').html("<p class='resultHolder'>No results found!</p>");
+		$('.eventResults').html("<p class='resultHolder'>Looks like a quiet day!</p>");
 		$('.eventResults').css("color", "rgb(11,4,10)");
 	}
 }
