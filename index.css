@@ -1,6 +1,7 @@
 *{
 	margin:0;
 	padding:0;
+	box-sizing: border-box;
 }
 
 html{
@@ -91,6 +92,7 @@ button{
 button:hover{
 	background:rgb(190,151,164);
 	color:rgb(28,42,88);
+	cursor:pointer;
 }
 
 p{
@@ -106,6 +108,7 @@ a{
 a:hover{
 	color:rgb(127,104,141);
 	text-decoration:none;
+	cursor:pointer;
 }
 
 form{
@@ -187,6 +190,7 @@ img{
 
 img:hover{
 	opacity:0.5;
+	cursor:pointer;
 }
 
 img.attEvent{
@@ -255,6 +259,7 @@ nav button{
 nav button:hover{
 	background:rgb(11,4,10);
 	color:rgb(190,151,164);
+	cursor:pointer;
 }
 
 @media only screen and (max-width:640px){
