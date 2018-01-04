@@ -6,10 +6,10 @@
 
 html{
 	background: url(https://github.com/camerondodd/DateNight/raw/master/background.jpeg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size: cover;
+	-webkit-background-size:  cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size:  cover;
 }
 
 main{
@@ -18,8 +18,8 @@ main{
 }
 
 h1{
-	color:rgb(189,55,46);
-	background:rgb(192,178,127);
+	color:rgb(140, 50, 40);
+	background:rgb(32,36,39);
 	font-family: 'Playfair Display', serif;
 	font-size: 48px;
 	font-weight:bold;
@@ -27,11 +27,12 @@ h1{
 	padding-bottom:10px;
 	padding-top:5px;
 	vertical-align:center;
+	border-bottom:4px ridge rgb(170,187,191);
 }
 
 h2{
-	color:rgb(63,63,51);
-	background:rgb(229,243,218);
+	background:rgb(170,187,191);
+	color:rgb(17, 79 ,89);
 	width:100%;
 	margin-left:auto;
 	margin-right:auto;
@@ -40,11 +41,18 @@ h2{
 	padding-bottom:10px;
 	padding-top:5px;
 	vertical-align:center;
+	border-bottom: ridge 4px rgb(170,187,191);
 }
 
-.intro{
-	background:rgb(229,243,218);
-	color:rgb(63,63,51);
+.welcome{
+	background:rgb(17, 79 ,89);
+	color:rgb(170,187,191);
+	border:none;
+}
+
+/*.intro{
+	background:rgb(170,187,191);
+	color:rgb(17, 79 ,89);
 	width:80%;
 	margin-left:auto;
 	margin-right:auto;
@@ -53,19 +61,28 @@ h2{
 	padding-left:5px;
 	padding-right:5px;
 	padding-bottom:10px;
+	box-shadow: 1px 0px rgb(32,36,39);
+	border-left: ridge 4px rgb(17, 79 ,89);
+	border-right: ridge 4px rgb(17, 79 ,89);
+	border-bottom:ridge 4px rgb(17, 79 ,89);
+	border-radius: 0px 0px 10px 10px;
 }
 
 .intro p{
 	margin:0;
-}
+}*/
 
 .outOrIn{
-	background:rgb(80,116,55);
-	color:rgb(192,178,127);
+	background:rgb(17, 79 ,89);
+	color:rgb(170,187,191);
 	width:60%;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top: 50px;
 	padding:10px;
+	box-shadow: 1px 1px rgb(32,36,39);
+	border:ridge 4px rgb(170,187,191);
+	border-radius: 10px 10px 10px 10px;
 	
 }
 
@@ -76,13 +93,14 @@ h2{
 }
 
 button{
-	background:rgb(189,55,46);
-	color:rgb(229,243,218);
+	background:rgb(140, 50, 40);
+	color:rgb(170,187,191);
 	margin-left:5px;
 	margin-right:5px;
 	margin-bottom:10px;
 	margin-top:10px;
-	border:1px solid rgb(63,63,51);
+	border:3px ridge rgb(170,187,191);
+	border-radius: 10px 10px 10px 10px;
 	outline:0;
 	padding:5px;
 	font-weight:bold;
@@ -90,8 +108,8 @@ button{
 }
 
 button:hover{
-	background:rgb(229,243,218);
-	color:rgb(189,55,46);
+	background:rgb(170,187,191);
+	color:rgb(140, 50, 40);
 	cursor:pointer;
 }
 
@@ -101,35 +119,43 @@ p{
 }
 
 a{
-	color:rgb(63,63,51);
+	color:rgb(32,36,39);
 	text-decoration:none;
 }
 
 a:hover{
-	color:rgb(189,55,46);
+	color:rgb(140, 50, 40);
 	text-decoration:none;
 	cursor:pointer;
 }
 
 form{
-	background:rgb(80,116,55);
-	color:rgb(192,178,127);
+	background:rgb(17, 79 ,89);
+	color:rgb(170,187,191);
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top:50px;
 	padding:10px;
+	box-shadow: 1px 1px rgb(32,36,39);
+	border:ridge 4px rgb(170,187,191);
+	border-radius:10px 10px 10px 10px;
 }
 
 .ideaContainer{
-	background:rgb(80,116,55);
-	color:rgb(192,178,127);
+	background:rgb(17, 79 ,89);
+	color:rgb(170,187,191);
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top:50px;
 	margin-bottom:0px;
 	padding:20px;
 	line-height:130%;
 	text-align:center;
+	box-shadow: 1px 1px rgb(32,36,39);
+	border:ridge 4px rgb(170,187,191);
+	border-radius:10px 10px 10px 10px;
 }
 
 .cityRequestContainer{
@@ -212,8 +238,8 @@ footer{
 	position:fixed;
 	bottom:0;
 	width:100%;
-	background:rgb(192,178,127);
-	color:rgb(189,55,46);
+	color:rgb(140, 50, 40);
+	background:rgb(32,36,39);
 	padding:5px;
 	vertical-align:center;
 	font-size:17px;
@@ -225,14 +251,16 @@ footer span{
 }
 
 .resultHolder{
-	background:rgb(229,243,218);
-	color:rgb(63,63,51);
-	margin-bottom:30px;
+	background:rgb(170,187,191);
+	color:rgb(32,36,39);
+	margin-bottom:45px;
 	padding:10px;
 	line-height:130%;
 	text-align:center;
 	margin-left:10%;
 	margin-right:10%;
+	border:5px groove rgb(170,187,191);
+	border-radius: 10px 10px 10px 10px;
 }
 
 .ideaResults .resultHolder img{
@@ -243,13 +271,13 @@ nav{
 	position:fixed;
 	bottom:0;
 	width:100%;
-	background:rgb(192,178,127);
+	background:rgb(32,36,39);
 	vertical-align:center;
 }
 nav button{
-	background:rgb(189,55,46);
-	color:rgb(229,243,218);
-	border:1px solid rgb(63,63,51);
+	background:rgb(140, 50, 40);
+	color:rgb(170,187,191);
+	border:3px ridge rgb(170,187,191);
 	vertical-align:center;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -257,8 +285,8 @@ nav button{
 }
 
 nav button:hover{
-	background:rgb(229,243,218);
-	color:rgb(189,55,46);
+	background:rgb(170,187,191);
+	color:rgb(140, 50, 40);
 	cursor:pointer;
 }
 
