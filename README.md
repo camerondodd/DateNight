@@ -3,7 +3,7 @@
 ## Summary </br>
 This is a straight forward application intended to make planning a date night easier.  The user starts on an opening page where they will decide whether they want to go out on their date, or stay in.
 
-<img src="https://github.com/camerondodd/capstone1/blob/master/screenshot_openingpage.png" alt="screenshot of opening page" width="500px">
+<img src="https://github.com/camerondodd/capstone1/blob/master/screenshot_openingpage.jpg" alt="screenshot of opening page" width="500px">
 
 If the user decides to go out they are navigated to a page where they will enter their city, then be able to look up local restaurants, with links to websites, user rating, price ranges, and addresses, or events, with links to the event, start times, links to the venue, and addresses, happening that day by entering search terms.
 
