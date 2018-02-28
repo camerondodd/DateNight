@@ -27,7 +27,7 @@ h1{
 	padding-bottom:10px;
 	padding-top:5px;
 	vertical-align:center;
-	border-bottom:4px ridge rgb(170,187,191);
+	/*border-bottom:4px ridge rgb(170,187,191);*/
 }
 
 h2{
@@ -41,7 +41,7 @@ h2{
 	padding-bottom:10px;
 	padding-top:5px;
 	vertical-align:center;
-	border-bottom: ridge 4px rgb(170,187,191);
+	/*border-bottom: ridge 4px rgb(170,187,191);*/
 }
 
 .welcome{
@@ -80,8 +80,8 @@ h2{
 	margin-right:auto;
 	margin-top: 50px;
 	padding:10px;
-	box-shadow: 1px 1px rgb(32,36,39);
-	border:ridge 4px rgb(170,187,191);
+	box-shadow: 2px 2px rgb(32,36,39);
+	/*border:ridge 4px rgb(170,187,191);*/
 	border-radius: 10px 10px 10px 10px;
 	
 }
@@ -99,7 +99,8 @@ button{
 	margin-right:5px;
 	margin-bottom:10px;
 	margin-top:10px;
-	border:3px ridge rgb(170,187,191);
+	box-shadow: 1px 1px rgb(32,36,39);
+	/*border:3px ridge rgb(170,187,191);*/
 	border-radius: 10px 10px 10px 10px;
 	outline:0;
 	padding:5px;
@@ -137,8 +138,8 @@ form{
 	margin-right:auto;
 	margin-top:50px;
 	padding:10px;
-	box-shadow: 1px 1px rgb(32,36,39);
-	border:ridge 4px rgb(170,187,191);
+	box-shadow: 2px 2px rgb(32,36,39);
+	/*border:ridge 4px rgb(170,187,191);*/
 	border-radius:10px 10px 10px 10px;
 }
 
@@ -149,12 +150,12 @@ form{
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:50px;
-	margin-bottom:0px;
+	margin-bottom:10px;
 	padding:20px;
 	line-height:130%;
 	text-align:center;
-	box-shadow: 1px 1px rgb(32,36,39);
-	border:ridge 4px rgb(170,187,191);
+	box-shadow: 2px 2px rgb(32,36,39);
+	/*border:ridge 4px rgb(170,187,191);*/
 	border-radius:10px 10px 10px 10px;
 }
 
@@ -175,6 +176,12 @@ form{
 input{
 	padding:5px;
 	margin:5px;
+	font-size:17px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.foodInput,.recipeInput{
+	padding-left: 10px;
 }
 
 .cityRequestContainer button{
@@ -188,6 +195,10 @@ input{
 
 .cityResults{
 	margin-top:5px;
+}
+
+.recipeRequestContainer, .foodRequestContainer, .eventRequestContainer{
+	margin-bottom: 10px;
 }
 
 header, .outOrInBox, nav, .city{
@@ -259,7 +270,8 @@ footer span{
 	text-align:center;
 	margin-left:10%;
 	margin-right:10%;
-	border:5px groove rgb(170,187,191);
+	box-shadow: 1px 1px rgb(32,36,39);
+	/*border:5px groove rgb(170,187,191);*/
 	border-radius: 10px 10px 10px 10px;
 }
 
@@ -277,7 +289,8 @@ nav{
 nav button{
 	background:rgb(140, 50, 40);
 	color:rgb(170,187,191);
-	border:3px ridge rgb(170,187,191);
+	box-shadow: 1px 1px rgb(32,36,39);
+	/*border:3px ridge rgb(170,187,191);*/
 	vertical-align:center;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -290,7 +303,7 @@ nav button:hover{
 	cursor:pointer;
 }
 
-@media only screen and (max-width:640px){
+@media only screen and (max-width:800px){
 
 	*{
 		margin:0;
@@ -305,12 +318,13 @@ nav button:hover{
 	}
 
 	form{
+		box-sizing: border-box;
 		width:100%;
-		padding:0;
+		padding:5px;
 		margin-left:0;
 		margin-right:0;
-		margin-top:5px;
-		margin-bottom:5px;
+		margin-top:10px;
+		margin-bottom:0px;
 	}
 
 	.eventColumn{
@@ -323,17 +337,19 @@ nav button:hover{
 	}
 
 	.ideaContainer{
+		box-sizing: border-box;
 		width:100%;
 		margin-left:0;
 		margin-right:0;
 		margin-top:0;
 		margin-bottom:40px;
-		padding:0;
+		padding:5px;
 	}
 
 	input{
+		box-sizing: border-box;
 		width:90%;
-		margin:0;
+		margin:5px;
 		padding:0;
 	}
 
@@ -347,10 +363,10 @@ nav button:hover{
 		margin-left:0;
 		margin-right:0;
 		margin-top:0;
-		margin-bottom:40px;
+		margin-bottom:50px;
 		padding-left:0;
 		padding-right:0;
-		padding-bottom:0;
+		padding-bottom:10px;
 		padding-top:10px;
 	}
 
@@ -374,20 +390,20 @@ nav button:hover{
 	}
 
 	.cityRequestContainer{
-	width:60%;
+	width:100%;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:0;
-	margin-bottom:15px;
+	margin-top:10px;
+	margin-bottom:10px;
 	}
 
 	nav{
-		height:40px;
+		height:45px;
 	}
 
 	nav button{
 		width:60%;
-		font-size:15px;
+		font-size:17px;
 		margin-bottom:5px;
 		margin-top:5px;
 	}

@@ -386,8 +386,9 @@ function renderFood(item){
 				${item.restaurant.name}
 			</a>
 			</br>
-			<p>User Rating: ${item.restaurant.user_rating.rating_text}</p>
-			<p>Price Range: ${item.restaurant.price_range}/5</p>
+			<span style="font-weight:bold;">User Rating:</span><span> ${item.restaurant.user_rating.rating_text}</span>
+			</br>
+			<span style="font-weight:bold;">Price Range:</span><span> ${item.restaurant.price_range}/5</span>
 			<p>${item.restaurant.location.address}</p>
 		</div>
 	`;
@@ -451,9 +452,12 @@ function renderEvent(item){
 				${item.title}
 			</a>
 			</br>
-			<p>Starts: ${item.start_time}</p>
-			<p>Venue: <a href="${item.venue_url}">${item.venue_name}</a></p>
-			<p>Address: ${item.venue_address}</p>
+			<span style="font-weight:bold;">Starts:</span><span> ${item.start_time}</span>
+			</br>
+			<span style="font-weight:bold;">Venue:</span><span> <a href="${item.venue_url}">${item.venue_name}</a></span>
+			</br>
+			<span style="font-weight:bold;">Address:</span><span> ${item.venue_address}</span>
+			</br>
 			<p>${item.city_name}, ${item.region_abbr}  ${item.postal_code}</p>
 		</div>
 	`;
